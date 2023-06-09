@@ -1,7 +1,7 @@
 # My--frontend-Journey-Js
 
 
-# Hi, I'm Karan!  👋
+# Hi, I'm Chirag Gautam!  👋
 Thanks for visiting the profile
 
 # Project Title
