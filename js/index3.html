@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="TextBoxContainer">
+        <!--Textboxes will be added here -->
+   </div>
+   <br />
+   <input id="btnAdd" type="button" value="add" onclick="AddTextBox();" />
+   
+   <script type="text/javascript">
+           var room = 0;
+           var dateTime = new Date();
+            var date = dateTime.toLocaleDateString();
+            var  time = dateTime.toLocaleTimeString();
+            var heading = document.createElement('h1');
+            heading.innerHTML = GetDynamicTextBox("<h1>Date:"+date+" Time:"+time+"</h1>");
+            document.getElementById("TextBoxContainer").appendChild(heading);
+           function GetDynamicTextBox(){
+               return '<div>Alarm ' + room +':</div><input type="number"style="text-align:center;margin:auto;padding:0px;width:200px;" min="0" max="23" placeholder="hour" id="a'+room+'" /><input type="number" min="0" max="59" placeholder="minute" style="text-align:center; padding:0px; margin:auto; width:200px;" id="b'+room+'" /><input type="date" style="margin:auto;text-align:center; width:200px; padding:10px"><input type="button" value ="Set" onclick = "AddAlarm('+room+');" /> <input type="button" value ="Remove" onclick = "RemoveTextBox(this)" />';
+           }
+           function AddTextBox() {
+               var div = document.createElement('DIV');
+               div.innerHTML = GetDynamicTextBox("");
+               document.getElementById("TextBoxContainer").appendChild(div);
+           }
+   
+           function RemoveTextBox(div) {
+               document.getElementById("TextBoxContainer").removeChild(div.parentNode);
+           }
+   
+           function RecreateDynamicTextboxes() {
+                   var html = "";
+                   html += "<div>" + GetDynamicTextBox() + "</div>";
+                   document.getElementById("TextBoxContainer").innerHTML = html;
+                   room++;
+           }
+           window.onload = RecreateDynamicTextboxes;
+   
+           function AddAlarm(values){
+               var hour = document.getElementById('');
+               var minute = document.getElementById('');
+               var date = document.getElementById('');
+           }
+   </script>
+   
+</body>
+</html>

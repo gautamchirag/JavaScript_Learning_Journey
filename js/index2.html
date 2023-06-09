@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+</head>
+<body>
+    <div class="container">
+        <h2 id="date"></h2>
+        <h2 id="clock" class="clock"></h2>
+        <select name="Hours" id="hours"></select>
+        <select name="minutes" id="minutes"></select>
+        <select name="seconds" id="seconds"></select>
+        <select name="ampm" id="ampm">
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+        </select>
+        <!-- <div src="Binte Dil Neeti Mohan.mp3"></div> -->
+        <button id = "snooze" class="hide" onclick="snooze()"style="display: none;">Snooze</button>
+        <button id = "createAlarm" onclick="createAlarm()">Set Alarm</button>
+        <button id = "resetAlarm" onclick="resetAlarm()" style="display: none;">Reset Alarm</button>
+        <div id="AlarmBox"></div>
+    </div>
+    
+
+
+    <script src="24.js"></script>
+</body>
+</html>
